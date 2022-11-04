@@ -1,2 +1,2 @@
 # jus-edge-graphql
-Apollo Federation v2 Supergraph
+One Graph Service with graphql federation 
