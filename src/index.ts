@@ -1,12 +1,13 @@
-const { ApolloServer } = require('@apollo/server')
-const { startStandaloneServer } = require('@apollo/server/standalone')
-const { ApolloGateway, IntrospectAndCompose } = require('@apollo/gateway')
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
 
-import { 
+import { ApolloGateway, IntrospectAndCompose } from '@apollo/gateway'
+
+import {
   PORT,
   SEARCH_SUBGRAPH_URL,
-  DOCUMENTS_SUBGRAPH_URL,
- } from './config/constants'
+  DOCUMENTS_SUBGRAPH_URL
+} from './config/constants'
 
 const gateway = new ApolloGateway({
   // Notice that we used IntrospectAndCompose method to introspect subschemas.
@@ -22,23 +23,21 @@ const gateway = new ApolloGateway({
       {
         name: 'documents',
         url: DOCUMENTS_SUBGRAPH_URL
-      },
+      }
     ]
   })
 })
 
-const server = new ApolloServer({
-  port: PORT,
-  gateway,
-  debug: true,
-  subscriptions: false
-})
+type MyContext = {
+  token?: string
+}
+
+const server = new ApolloServer<MyContext>({ gateway })
 
 ;(async () => {
   const { url } = await startStandaloneServer(server, {
-    context: async ({ req }: any) => ({ token: req.headers.token }),
-    listen: { port: PORT }
+    context: async ({ req }) => ({ token: req.headers.token }),
+    listen: { port: Number(PORT) }
   })
-
   console.log(`Jus Edge GraphQL ready at ${url}`)
 })()
