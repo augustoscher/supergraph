@@ -44,6 +44,12 @@ query Search($artifact: String!, $q: String!) {
   }
 }
 
+# variables
+{
+  "artifact": "JURISPRUDENCIA",
+  "q": "danos morais"
+}
+
 ```
 ## FAQ
 - **How it works when subgraph schema changes in production? Supergraph needs to redeploy?**
