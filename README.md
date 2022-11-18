@@ -12,7 +12,9 @@ Jus Edge GraphQL super graph is composed by the following sub graphs:
 
 ## Running
 
-Make sure that all subgraphs are running. To run the edge graphql, type:
+- Clone both subgraphs listed above.
+- Make sure that all subgraphs are running.
+- Run supergraph:
 
 ```
 yarn dev
