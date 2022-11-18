@@ -12,15 +12,10 @@ Jus Edge GraphQL super graph is composed by the following sub graphs:
 
 ## Running
 
-Make sure that all subgraphs are running.
-To run the edge graphql, type:
+Make sure that all subgraphs are running. To run the edge graphql, type:
 
 ```
 yarn dev
-```
-or
-```
-make dev
 ```
 
 ## Example
