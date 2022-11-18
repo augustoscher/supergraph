@@ -36,6 +36,7 @@ query Search($artifact: String!, $q: String!) {
     body
     relatedDocument {
       documentId
+      title
       # available only in documents subgraph
       meritDecision
       mandatoryPrecedent
