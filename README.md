@@ -22,3 +22,26 @@ or
 ```
 make dev
 ```
+
+## Example
+
+This query should fetch data from all subgraphs:
+
+```gql
+query Search($artifact: String!, $q: String!) {
+  search(artifact: $artifact, q: $q) {
+    id
+    documentId
+    title
+    body
+    relatedDocument {
+      documentId
+      # available only in documents subgraph
+      meritDecision
+      mandatoryPrecedent
+      readingTime
+    }
+  }
+}
+
+```
