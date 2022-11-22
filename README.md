@@ -10,6 +10,9 @@ Supergraph is composed by the following sub graphs:
 
 [Document Domain Graph Service](https://github.com/augustoscher/document-graphql)
 
+<img width="615" alt="image" src="https://user-images.githubusercontent.com/9935397/203326829-7fae3b13-bbb3-419f-a3e6-4dadbfc1a893.png">
+
+
 ## Running
 
 - Clone both subgraphs listed above.
