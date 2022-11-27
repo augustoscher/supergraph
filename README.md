@@ -46,10 +46,10 @@ query Search($artifact: String!, $q: String!) {
 }
 
 # variables
-{
-  "artifact": "JURISPRUDENCIA",
-  "q": "danos morais"
-}
+# {
+#  "artifact": "JURISPRUDENCIA",
+#  "q": "danos morais"
+# }
 
 ```
 ## FAQ
