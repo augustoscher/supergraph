@@ -28,11 +28,11 @@ const gateway = new ApolloGateway({
   })
 })
 
-type MyContext = {
+type Ctx = {
   token?: string
 }
 
-const server = new ApolloServer<MyContext>({ gateway })
+const server = new ApolloServer<Ctx>({ gateway })
 
 ;(async () => {
   const { url } = await startStandaloneServer(server, {
